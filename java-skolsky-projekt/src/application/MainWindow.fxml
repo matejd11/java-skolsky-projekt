@@ -9,14 +9,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Main">
    <children>
-      <Button fx:id="BRouter" mnemonicParsing="false" onAction="#ButtonRouterPressed" text="Router">
+      <Button fx:id="BRouter" mnemonicParsing="false" onAction="#buttonRouterPressed" text="Router">
          <VBox.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="BSwitch" mnemonicParsing="false" onAction="#ButtonSwitchPressed" text="Switch">
+      <Button fx:id="BSwitch" mnemonicParsing="false" onAction="#buttonSwitchPressed" text="Switch">
          <opaqueInsets>
             <Insets right="5.0" />
          </opaqueInsets>

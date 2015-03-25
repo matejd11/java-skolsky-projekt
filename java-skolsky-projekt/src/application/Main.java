@@ -3,13 +3,21 @@ package application;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
+	@FXML
+	private Button	BSwitch;
+	@FXML
+	private Button	BRouter;
+	@FXML
 	private Stage	primaryStage;
 
 	@Override
@@ -25,54 +33,56 @@ public class Main extends Application {
 
 			primaryStage.setTitle("Selfienator");
 			primaryStage.setScene(scene);
-
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	void switchScene(int param) {
+	void switchScene(int param, ActionEvent event) throws IOException {
 		if (param == 1) {
 
-			try {
-				Parent root = FXMLLoader.load(getClass().getResource(
-						"RouterWindow.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource(
+					"RouterWindow.fxml"));
 
-				root.getStylesheets().add("RouterWindow.css");
+			root.getStylesheets().add("RouterWindow.css");
 
-				Scene scene = new Scene(root, 300, 275);
+			Scene scene = new Scene(root);
 
-				primaryStage.setScene(scene);
+			Stage stage = (Stage) ((Node) event.getSource()).getScene()
+					.getWindow();
 
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			stage.hide();
+			stage.setScene(scene);
+			stage.show();
 		}
 		if (param == 2) {
 
-			try {
-				Parent root = FXMLLoader.load(getClass().getResource(
-						"SwitchWindow.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource(
+					"SwitchWindow.fxml"));
 
-				root.getStylesheets().add("SwitchWindow.css");
+			root.getStylesheets().add("SwitchWindow.css");
 
-				Scene scene = new Scene(root, 300, 275);
+			Scene scene = new Scene(root);
 
-				primaryStage.setScene(scene);
+			Stage stage = (Stage) ((Node) event.getSource()).getScene()
+					.getWindow();
 
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			stage.hide();
+			stage.setScene(scene);
+			stage.show();
+
 		}
 	}
 
-	void ButtonRouterPressed() {
-		switchScene(1);
+	@FXML
+	void buttonRouterPressed(ActionEvent event) throws IOException {
+		switchScene(1, event);
 	}
 
-	void ButtonSwitchPressed() {
-		switchScene(2);
+	@FXML
+	void buttonSwitchPressed(ActionEvent event) throws IOException {
+		switchScene(2, event);
 	}
 
 	public static void main(String[] args) {
