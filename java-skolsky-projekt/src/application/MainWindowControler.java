@@ -31,6 +31,7 @@ public class MainWindowControler {
 			Stage stage = (Stage) ((Node) event.getSource()).getScene()
 					.getWindow();
 
+			stage.setResizable(false);
 			stage.hide();
 			stage.setScene(scene);
 			stage.show();
@@ -47,6 +48,7 @@ public class MainWindowControler {
 			Stage stage = (Stage) ((Node) event.getSource()).getScene()
 					.getWindow();
 
+			stage.setResizable(false);
 			stage.hide();
 			stage.setScene(scene);
 			stage.show();

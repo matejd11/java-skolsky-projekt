@@ -23,6 +23,7 @@ public class Main extends Application {
 			root.getStylesheets().add("MainWindow.css");
 
 			Scene scene = new Scene(root, 300, 275);
+			primaryStage.setResizable(false);
 
 			primaryStage.setTitle("Selfienator");
 			primaryStage.setScene(scene);
