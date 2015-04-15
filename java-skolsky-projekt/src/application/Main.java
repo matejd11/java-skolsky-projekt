@@ -24,7 +24,7 @@ public class Main extends Application {
 	public void start(Stage stage) {
 		try {
 
-			// SKUSKA MATEJ
+			// SKUSKA MATEJ oprava
 			primaryStage = stage;
 
 			Parent root = FXMLLoader.load(getClass().getResource(
