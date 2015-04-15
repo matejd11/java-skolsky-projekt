@@ -10,36 +10,32 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowControler">
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowControler">
    <children>
-      <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Exit">
             <items>
               <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="About">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
-      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
-         <children>
-            <Button fx:id="BSwitch" mnemonicParsing="false" onAction="#buttonSwitchPressed" text="Switch">
-               <opaqueInsets>
-                  <Insets right="5.0" />
-               </opaqueInsets>
-            </Button>
-            <Button fx:id="BRouter" mnemonicParsing="false" onAction="#buttonRouterPressed" text="Router" />
-         </children>
-      </VBox>
+      <Button fx:id="BRouter" layoutX="43.0" layoutY="100.0" mnemonicParsing="false" onAction="#buttonRouterPressed" text="Router" />
+      <Button fx:id="BSwitch" layoutX="107.0" layoutY="100.0" mnemonicParsing="false" onAction="#buttonSwitchPressed" text="Switch">
+         <opaqueInsets>
+            <Insets right="5.0" />
+         </opaqueInsets>
+      </Button>
    </children>
 </AnchorPane>

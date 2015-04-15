@@ -14,7 +14,7 @@ public class LoadingWindowController {
 
 	@FXML
 	void ButtonRefreshClicked(ActionEvent event) {
-		ListOfCom.
+		ListOfCom.getItems().remove(0, ListOfCom.getItems().size() - 1);
 		CommPortIdentifier portId = null;
 		Enumeration portEnum = CommPortIdentifier.getPortIdentifiers();
 
@@ -22,7 +22,7 @@ public class LoadingWindowController {
 		while (portEnum.hasMoreElements()) {
 			CommPortIdentifier currPortId = (CommPortIdentifier) portEnum
 					.nextElement();
-			ListOfCom
+			ListOfCom.getItems().add(currPortId.getName());
 		}
 	}
 
