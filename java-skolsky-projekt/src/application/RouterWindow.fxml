@@ -18,6 +18,28 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Button layoutX="525.0" layoutY="34.0" mnemonicParsing="false" onAction="#Button_Physicalint_click_refresh" text="Refresh" />
+                        <VBox prefHeight="371.0" prefWidth="517.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fast Ethernet 0/0" />
+                              <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IP address:" />
+                                    <TextField fx:id="TF_FAST_00_IP_ADD" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mask/Prefix:" />
+                                    <TextField fx:id="TF_FAST_00_MASK" />
+                                 </children>
+                              </HBox>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fast Ethernet 0/1" />
+                              <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IP address:" />
+                                    <TextField />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mask/Prefix:" />
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
                </content>
@@ -37,17 +59,17 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
             </Tab>
+            <Tab text="PPP">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
             <Tab text="PAP">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
             </Tab>
             <Tab text="CHAP">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
-            <Tab text="EIGRP">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
