@@ -21,15 +21,13 @@ public class MainWindowControler {
 	void switchScene(int param, ActionEvent event) throws IOException {
 		if (param == 1) {
 
-			Parent root = FXMLLoader.load(getClass().getResource(
-					"RouterWindow.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("RouterWindow.fxml"));
 
 			root.getStylesheets().add("RouterWindow.css");
 
 			Scene scene = new Scene(root);
 
-			Stage stage = (Stage) ((Node) event.getSource()).getScene()
-					.getWindow();
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
 			stage.setResizable(false);
 			stage.hide();
@@ -38,15 +36,13 @@ public class MainWindowControler {
 		}
 		if (param == 2) {
 
-			Parent root = FXMLLoader.load(getClass().getResource(
-					"SwitchWindow.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("SwitchWindow.fxml"));
 
 			root.getStylesheets().add("SwitchWindow.css");
 
 			Scene scene = new Scene(root);
 
-			Stage stage = (Stage) ((Node) event.getSource()).getScene()
-					.getWindow();
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
 			stage.setResizable(false);
 			stage.hide();

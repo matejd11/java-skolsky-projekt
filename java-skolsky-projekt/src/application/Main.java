@@ -15,12 +15,13 @@ public class Main extends Application {
 	public void start(Stage stage) {
 		try {
 
-			// SKUSKA MATEJ oprava
 			primaryStage = stage;
 
-			Parent root = FXMLLoader.load(getClass().getResource(
-					"MainWindow.fxml"));
-			root.getStylesheets().add("MainWindow.css");
+			// Parent root =
+			// FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
+			// root.getStylesheets().add("MainWindow.css");
+
+			Parent root = FXMLLoader.load(getClass().getResource("LoadingWindow.fxml"));
 
 			Scene scene = new Scene(root, 300, 275);
 			primaryStage.setResizable(false);
