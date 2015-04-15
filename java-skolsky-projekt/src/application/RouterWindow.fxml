@@ -17,7 +17,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="121.0" layoutY="125.0" mnemonicParsing="false" onAction="#Button_Physicalint_click_refresh" text="Refresh" />
+                        <Button layoutX="525.0" layoutY="34.0" mnemonicParsing="false" onAction="#Button_Physicalint_click_refresh" text="Refresh" />
                      </children>
                   </AnchorPane>
                </content>
