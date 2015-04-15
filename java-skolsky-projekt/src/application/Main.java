@@ -23,6 +23,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) {
 		try {
+
+			// SKUSKA MATEJ
 			primaryStage = stage;
 
 			Parent root = FXMLLoader.load(getClass().getResource(
