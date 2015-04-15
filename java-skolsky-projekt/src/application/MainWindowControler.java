@@ -5,10 +5,9 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class MainWindowControler {
@@ -18,35 +17,66 @@ public class MainWindowControler {
 	@FXML
 	private Button	BRouter;
 
+	Stage			prevStage;
+
+	public void setPrevStage(Stage stage) {
+		this.prevStage = stage;
+	}
+
 	void switchScene(int param, ActionEvent event) throws IOException {
 		if (param == 1) {
+			/*
+			 * Parent root =
+			 * FXMLLoader.load(getClass().getResource("RouterWindow.fxml"));
+			 * 
+			 * root.getStylesheets().add("RouterWindow.css");
+			 * 
+			 * Scene scene = new Scene(root);
+			 * 
+			 * Stage stage = (Stage) ((Node)
+			 * event.getSource()).getScene().getWindow();
+			 * 
+			 * stage.setResizable(false); stage.hide(); stage.setScene(scene);
+			 * stage.show();
+			 */
 
-			Parent root = FXMLLoader.load(getClass().getResource("RouterWindow.fxml"));
-
-			root.getStylesheets().add("RouterWindow.css");
-
-			Scene scene = new Scene(root);
-
-			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-			stage.setResizable(false);
-			stage.hide();
+			Stage stage = new Stage();
+			stage.setTitle("Router");
+			Pane myPane = null;
+			myPane = FXMLLoader.load(getClass().getResource("RouterWindow.fxml"));
+			Scene scene = new Scene(myPane);
 			stage.setScene(scene);
+
+			prevStage.close();
+
 			stage.show();
 		}
 		if (param == 2) {
 
-			Parent root = FXMLLoader.load(getClass().getResource("SwitchWindow.fxml"));
+			/*
+			 * Parent root =
+			 * FXMLLoader.load(getClass().getResource("SwitchWindow.fxml"));
+			 * 
+			 * root.getStylesheets().add("SwitchWindow.css");
+			 * 
+			 * Scene scene = new Scene(root);
+			 * 
+			 * Stage stage = (Stage) ((Node)
+			 * event.getSource()).getScene().getWindow();
+			 * 
+			 * stage.setResizable(false); stage.hide(); stage.setScene(scene);
+			 * stage.show();
+			 */
 
-			root.getStylesheets().add("SwitchWindow.css");
-
-			Scene scene = new Scene(root);
-
-			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-			stage.setResizable(false);
-			stage.hide();
+			Stage stage = new Stage();
+			stage.setTitle("Switch");
+			Pane myPane = null;
+			myPane = FXMLLoader.load(getClass().getResource("SwitchWindow.fxml"));
+			Scene scene = new Scene(myPane);
 			stage.setScene(scene);
+
+			prevStage.close();
+
 			stage.show();
 
 		}

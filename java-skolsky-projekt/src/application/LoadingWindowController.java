@@ -2,11 +2,18 @@ package application;
 
 import gnu.io.CommPortIdentifier;
 
+import java.io.IOException;
 import java.util.Enumeration;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.stage.Stage;
+import Serial.SerialPortHelper;
 
 public class LoadingWindowController {
 	@FXML
@@ -25,32 +32,24 @@ public class LoadingWindowController {
 	}
 
 	@FXML
-	void ButtonConnectClicked(ActionEvent event) {
-		/*
-		 * try { CommPortIdentifier portId = null;
-		 * 
-		 * Enumeration portEnum = CommPortIdentifier.getPortIdentifiers();
-		 * 
-		 * // First, Find an instance of serial port as set in PORT_NAMES. while
-		 * (portEnum.hasMoreElements()) { CommPortIdentifier currPortId =
-		 * (CommPortIdentifier) portEnum .nextElement(); if
-		 * (currPortId.getName() == ListOfCom.getSelectionModel()
-		 * .getSelectedItem()) { portId = currPortId; break; } }
-		 * 
-		 * // open serial port, and use class name for the appName. serialPort =
-		 * (SerialPort) portId.open(this.getClass().getName(), TIME_OUT);
-		 * 
-		 * // set port parameters serialPort.setSerialPortParams(DATA_RATE,
-		 * SerialPort.DATABITS_8, SerialPort.STOPBITS_1,
-		 * SerialPort.PARITY_NONE);
-		 * 
-		 * // open the streams input = new BufferedReader(new InputStreamReader(
-		 * serialPort.getInputStream())); output = serialPort.getOutputStream();
-		 * char ch = 1; output.write(ch);
-		 * 
-		 * // add event listeners serialPort.addEventListener(this);
-		 * serialPort.notifyOnDataAvailable(true); } catch (Exception e) {
-		 * System.err.println(e.toString()); }
-		 */
+	void ButtonConnectClicked(ActionEvent event) throws IOException {
+		SerialPortHelper.getInstance().openPort(ListOfCom.getSelectionModel().getSelectedItem().toString());
+
+		if (SerialPortHelper.opened()) {
+			System.out.println("yes");
+
+			Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
+
+			root.getStylesheets().add("MainWindow.css");
+
+			Scene scene = new Scene(root);
+
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+			stage.setResizable(false);
+			stage.setScene(scene);
+			stage.show();
+
+		}
 	}
 }
