@@ -14,7 +14,7 @@
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="121.0" prefWidth="593.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Physical Interfaces" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Button layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#Button_Physicalint_click_refresh" text="Refresh" />
+            <Button fx:id="RefreshButton" layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#Button_Physicalint_click_refresh" text="Refresh" />
             <VBox layoutY="17.0" prefHeight="92.0" prefWidth="516.0" AnchorPane.leftAnchor="25.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fast Ethernet 0/0" />

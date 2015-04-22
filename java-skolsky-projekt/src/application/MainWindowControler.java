@@ -92,4 +92,9 @@ public class MainWindowControler {
 		switchScene(2, event);
 	}
 
+	@FXML
+	void closeCommand(ActionEvent event) throws IOException {
+		Main.close();
+	}
+
 }
