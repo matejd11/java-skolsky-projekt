@@ -19,12 +19,24 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hostname:" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hostname:">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin></Text>
                         <TextField prefHeight="25.0" prefWidth="133.0">
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="Password ">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </CheckBox>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
@@ -38,11 +50,45 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="Logging synchronous">
+                        <VBox prefHeight="70.0" prefWidth="470.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Console">
+                                 <VBox.margin>
+                                    <Insets left="-20.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
+                                 <children>
+                                    <CheckBox mnemonicParsing="false" text="Password">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <CheckBox mnemonicParsing="false" text="login">
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
+                                 <children>
+                                    <CheckBox mnemonicParsing="false" text="Logging synchronous">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                 </children>
+                              </HBox>
+                           </children>
                            <HBox.margin>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              <Insets left="25.0" />
                            </HBox.margin>
-                        </CheckBox>
+                        </VBox>
                      </children>
                   </HBox>
                </children>
