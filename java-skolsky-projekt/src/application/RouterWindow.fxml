@@ -11,75 +11,87 @@
 
 <FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TabPane prefHeight="400.0" prefWidth="601.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-            <Tab text="PHYSICAL INT">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="121.0" prefWidth="593.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Physical Interfaces" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#Button_Physicalint_click_refresh" text="Refresh" />
+            <VBox layoutY="17.0" prefHeight="92.0" prefWidth="516.0" AnchorPane.leftAnchor="25.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fast Ethernet 0/0" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
                      <children>
-                        <Button layoutX="525.0" layoutY="34.0" mnemonicParsing="false" onAction="#Button_Physicalint_click_refresh" text="Refresh" />
-                        <VBox prefHeight="371.0" prefWidth="517.0">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fast Ethernet 0/0" />
-                              <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IP address:" />
-                                    <TextField fx:id="TF_FAST_00_IP_ADD" />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mask/Prefix:" />
-                                    <TextField fx:id="TF_FAST_00_MASK" />
-                                 </children>
-                              </HBox>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fast Ethernet 0/1" />
-                              <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IP address:" />
-                                    <TextField />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mask/Prefix:" />
-                                    <TextField />
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IP address:" />
+                        <TextField fx:id="TF_FAST_00_IP_ADD" prefWidth="120.0">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mask/Prefix:" />
+                        <TextField fx:id="TF_FAST_00_MASK" prefWidth="120.0">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <CheckBox mnemonicParsing="false" text="no shutdown" />
                      </children>
-                  </AnchorPane>
-               </content>
-            </Tab>
-          <Tab text="RIP">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </Tab>
-          <Tab text="EIGRP">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </Tab>
-            <Tab text="OSPF">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
-            <Tab text="PPP">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
-            <Tab text="PAP">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
-            <Tab text="CHAP">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
-            <Tab text="EIGRP">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
-        </tabs>
-      </TabPane>
+                  </HBox>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fast Ethernet 0/1" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IP address:" />
+                        <TextField prefWidth="120.0">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mask/Prefix:" />
+                        <TextField prefWidth="120.0">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <CheckBox mnemonicParsing="false" text="no shutdown" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <FlowPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </FlowPane.margin>
+      </AnchorPane>
+      <AnchorPane prefHeight="87.0" prefWidth="594.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RIP routing" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <VBox layoutX="14.0" layoutY="26.0" prefHeight="61.0" prefWidth="516.0" AnchorPane.leftAnchor="25.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fast Ethernet 0/0" />
+                        <CheckBox mnemonicParsing="false" text="include">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fast Ethernet 0/1" />
+                        <CheckBox mnemonicParsing="false" text="include">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Button layoutX="524.0" layoutY="17.0" mnemonicParsing="false" onAction="#Button_Physicalint_click_refresh" text="Refresh" />
+         </children>
+         <FlowPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </FlowPane.margin>
+      </AnchorPane>
    </children>
 </FlowPane>
