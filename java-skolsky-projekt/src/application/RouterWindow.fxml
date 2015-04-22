@@ -11,11 +11,48 @@
 
 <FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RouterWindowControler">
    <children>
+      <AnchorPane prefHeight="183.0" prefWidth="594.0">
+         <children>
+            <Button fx:id="RefreshButton" layoutX="524.0" layoutY="17.0" mnemonicParsing="false" onAction="#Button_click_refresh" text="Refresh" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="General settings" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+            <VBox layoutX="14.0" layoutY="26.0" prefHeight="61.0" prefWidth="516.0" AnchorPane.leftAnchor="25.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hostname:" />
+                        <TextField prefHeight="25.0" prefWidth="133.0">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="DNS lookup">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="Logging synchronous">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="121.0" prefWidth="593.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Physical Interfaces" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Button layoutX="523.0" layoutY="17.0" mnemonicParsing="false" onAction="#Button_Physicalint_click_refresh" text="Refresh" />
-            <VBox layoutY="17.0" prefHeight="92.0" prefWidth="516.0" AnchorPane.leftAnchor="25.0">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Physical Interfaces" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+            <VBox layoutX="25.0" layoutY="22.0" prefHeight="92.0" prefWidth="516.0" AnchorPane.leftAnchor="25.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fast Ethernet 0/0" />
                   <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
@@ -62,7 +99,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="87.0" prefWidth="594.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RIP routing" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RIP routing" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
             <VBox layoutX="14.0" layoutY="26.0" prefHeight="61.0" prefWidth="516.0" AnchorPane.leftAnchor="25.0">
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="517.0">
@@ -87,7 +124,6 @@
                   </HBox>
                </children>
             </VBox>
-            <Button layoutX="524.0" layoutY="17.0" mnemonicParsing="false" onAction="#Button_Physicalint_click_refresh" text="Refresh" />
          </children>
          <FlowPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
