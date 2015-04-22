@@ -15,7 +15,7 @@ import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 import Serial.SerialPortHelper;
 
-public class LoadingWindowController {
+public class LoadingWindowControler {
 	@FXML
 	ComboBox<String>	ListOfCom;
 
