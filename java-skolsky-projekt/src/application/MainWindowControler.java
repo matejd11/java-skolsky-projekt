@@ -37,7 +37,6 @@ public class MainWindowControler {
 			Stage stage = new Stage();
 			stage.setTitle("Router");
 			Pane myPane = FXMLLoader.load(getClass().getResource("RouterWindow.fxml"));
-			myPane.getStylesheets().add("RouterWindow.css");
 			Scene scene = new Scene(myPane);
 			stage.setScene(scene);
 

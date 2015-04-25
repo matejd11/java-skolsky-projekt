@@ -24,9 +24,7 @@ public class Main extends Application {
 			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 				@Override
 				public void handle(WindowEvent e) {
-					SerialPortHelper.disconnect();
-					Platform.exit();
-					System.exit(0);
+					Main.close();
 				}
 			});
 
@@ -69,6 +67,9 @@ public class Main extends Application {
 	}
 
 	public static void close() {
+		if (SerialPortHelper.opened()) {
+			SerialPortHelper.disconnect();
+		}
 		Platform.exit();
 		System.exit(0);
 	}

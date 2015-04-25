@@ -5,6 +5,7 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import Serial.SerialPortHelper;
 
 public class RouterWindowControler {
 
@@ -14,6 +15,6 @@ public class RouterWindowControler {
 	@FXML
 	void Button_click_refresh(ActionEvent event) throws IOException {
 		System.out.println("skuska");
+		SerialPortHelper.send("skuska");
 	}
-
 }

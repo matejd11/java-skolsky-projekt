@@ -4,8 +4,10 @@ import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.nio.charset.Charset;
 import java.util.Enumeration;
 
 public class SerialPortHelper {
@@ -17,12 +19,12 @@ public class SerialPortHelper {
 		return port;
 	}
 
-	public SerialPort				serialPort;
-	public static final int			TIME_OUT	= 2000;
-	public static final int			DATA_RATE	= 9600;
-	public static BufferedReader	input;
-	public static OutputStream		output;
-	public String					name;
+	protected SerialPort			serialPort;
+	protected static final int		TIME_OUT	= 2000;
+	protected static final int		DATA_RATE	= 9600;
+	protected static BufferedReader	input;
+	protected static OutputStream	output;
+	protected String				name;
 
 	public void openPort(String name) {
 		try {
@@ -50,8 +52,9 @@ public class SerialPortHelper {
 			// open the streams
 			input = new BufferedReader(new InputStreamReader(serialPort.getInputStream()));
 			output = serialPort.getOutputStream();
-			char ch = 1;
-			output.write(ch);
+			/*
+			 * char ch = 1; output.write(ch);
+			 */
 
 			// add event listeners serialPort.addEventListener(this);
 			serialPort.notifyOnDataAvailable(true);
@@ -61,6 +64,25 @@ public class SerialPortHelper {
 		}
 	}
 
+	protected void close() {
+		if (input != null)
+			try {
+				input.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		if (output != null)
+			try {
+				output.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		if (serialPort != null)
+			serialPort.close();
+	}
+
 	public static boolean opened() {
 		CommPortIdentifier portId = null;
 		Enumeration portEnum = CommPortIdentifier.getPortIdentifiers();
@@ -68,7 +90,9 @@ public class SerialPortHelper {
 		// First, Find an instance of serial port as set in PORT_NAMES.
 		while (portEnum.hasMoreElements()) {
 			CommPortIdentifier currPortId = (CommPortIdentifier) portEnum.nextElement();
-
+			if (port == null) {
+				return false;
+			}
 			if (currPortId.getName() == port.name) {
 				portId = currPortId;
 				break;
@@ -77,7 +101,26 @@ public class SerialPortHelper {
 		return "Serial.SerialPortHelper" == portId.getCurrentOwner();
 	}
 
+	protected void sendMessage(String message) {
+		try {
+			output.write(message.getBytes(Charset.forName("UTF-8")));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public String getName() {
+		return port.name;
+	}
+
 	public static void disconnect() {
-		port.serialPort.close();
+		port.close();
+	}
+
+	public static void send(String message) {
+		if (opened()) {
+			port.sendMessage(message);
+		}
 	}
 }

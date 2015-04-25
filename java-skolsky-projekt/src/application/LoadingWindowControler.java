@@ -20,6 +20,11 @@ public class LoadingWindowControler {
 	ComboBox<String>	ListOfCom;
 
 	@FXML
+	protected void initialize() {
+		ButtonRefreshClicked(null);
+	}
+
+	@FXML
 	void ButtonRefreshClicked(ActionEvent event) {
 		ListOfCom.getItems().remove(0, ListOfCom.getItems().size());
 		Enumeration portEnum = CommPortIdentifier.getPortIdentifiers();
@@ -51,5 +56,10 @@ public class LoadingWindowControler {
 			stage.show();
 
 		}
+	}
+
+	@FXML
+	void closeCommand(ActionEvent event) throws IOException {
+		Main.close();
 	}
 }
