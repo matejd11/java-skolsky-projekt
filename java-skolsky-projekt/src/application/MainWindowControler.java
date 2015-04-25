@@ -17,12 +17,6 @@ public class MainWindowControler {
 	@FXML
 	private Button	BRouter;
 
-	Stage			prevStage;
-
-	public void setPrevStage(Stage stage) {
-		this.prevStage = stage;
-	}
-
 	void switchScene(int param, ActionEvent event) throws IOException {
 		if (param == 1) {
 			/*
@@ -42,12 +36,10 @@ public class MainWindowControler {
 
 			Stage stage = new Stage();
 			stage.setTitle("Router");
-			Pane myPane = null;
-			myPane = FXMLLoader.load(getClass().getResource("RouterWindow.fxml"));
+			Pane myPane = FXMLLoader.load(getClass().getResource("RouterWindow.fxml"));
+			myPane.getStylesheets().add("RouterWindow.css");
 			Scene scene = new Scene(myPane);
 			stage.setScene(scene);
-
-			prevStage.close();
 
 			stage.show();
 		}
@@ -74,8 +66,6 @@ public class MainWindowControler {
 			myPane = FXMLLoader.load(getClass().getResource("SwitchWindow.fxml"));
 			Scene scene = new Scene(myPane);
 			stage.setScene(scene);
-
-			prevStage.close();
 
 			stage.show();
 
