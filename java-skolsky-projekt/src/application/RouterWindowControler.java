@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import router.RouterHelper;
 
 public class RouterWindowControler {
 	@FXML
@@ -87,6 +88,13 @@ public class RouterWindowControler {
 	@FXML
 	private TextField		FA01_IP_ADD;
 
+	private RouterHelper	router;
+
+	@FXML
+	public void initialize() {
+		router = new RouterHelper();
+	}
+
 	@FXML
 	void Button_click_refresh(ActionEvent event) {
 
@@ -104,12 +112,26 @@ public class RouterWindowControler {
 
 	@FXML
 	void sendConsole(ActionEvent event) {
+		boolean logginsynchronous = consoleLSCheckBox.isSelected();
+		router.getConsole().setLogging_synchronous(logginsynchronous);
+		boolean login = consoleLoginCheckBox.isSelected();
+		router.getConsole().setLogin(login);
+		String password = consolePasswordField.getText();
+		router.getConsole().setPassword(password);
 
+		router.getConsole().send();
 	}
 
 	@FXML
 	void sendTelnet(ActionEvent event) {
+		boolean logginsynchronous = telnetLSCheckBox.isSelected();
+		router.getTelnet().setLogging_synchronous(logginsynchronous);
+		boolean login = telnetLoginCheckBox.isSelected();
+		router.getTelnet().setLogin(login);
+		String password = telnetPasswordField.getText();
+		router.getTelnet().setPassword(password);
 
+		router.getTelnet().send();
 	}
 
 	@FXML

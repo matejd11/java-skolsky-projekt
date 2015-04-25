@@ -104,6 +104,19 @@ public class SerialPortHelper {
 	protected void sendMessage(String message) {
 		try {
 			output.write(message.getBytes(Charset.forName("UTF-8")));
+			System.out.print(message);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	protected void sendMessageLn(String message) {
+		try {
+			output.write(message.getBytes(Charset.forName("UTF-8")));
+			output.write("\n".getBytes(Charset.forName("UTF-8")));
+
+			System.out.print(message + "\n");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -121,6 +134,12 @@ public class SerialPortHelper {
 	public static void send(String message) {
 		if (opened()) {
 			port.sendMessage(message);
+		}
+	}
+
+	public static void sendln(String message) {
+		if (opened()) {
+			port.sendMessageLn(message);
 		}
 	}
 }
