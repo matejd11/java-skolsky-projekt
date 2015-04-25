@@ -39,7 +39,8 @@ public class MainWindowControler {
 			Pane myPane = FXMLLoader.load(getClass().getResource("RouterWindow.fxml"));
 			Scene scene = new Scene(myPane);
 			stage.setScene(scene);
-
+			stage.setMinWidth(650);
+			stage.setMinHeight(1010);
 			stage.show();
 		}
 		if (param == 2) {

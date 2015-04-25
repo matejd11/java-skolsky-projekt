@@ -34,6 +34,7 @@ public class LoadingWindowControler {
 			CommPortIdentifier currPortId = (CommPortIdentifier) portEnum.nextElement();
 			ListOfCom.getItems().add(currPortId.getName());
 		}
+		ListOfCom.getSelectionModel().select(0);
 	}
 
 	@FXML

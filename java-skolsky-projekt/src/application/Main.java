@@ -28,29 +28,6 @@ public class Main extends Application {
 				}
 			});
 
-			// Parent root =
-			// FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
-			// root.getStylesheets().add("MainWindow.css");
-			/*
-			 * Parent root =
-			 * FXMLLoader.load(getClass().getResource("LoadingWindow.fxml"));
-			 * 
-			 * Scene scene = new Scene(root); primaryStage.setResizable(false);
-			 * 
-			 * primaryStage.setTitle("Selfienator");
-			 * primaryStage.setScene(scene); primaryStage.show();
-			 */
-			/*
-			 * FXMLLoader myLoader = new
-			 * FXMLLoader(getClass().getResource("createProduct.fxml"));
-			 * 
-			 * Pane myPane = (Pane) myLoader.load();
-			 */
-			// CreateProductController controller = (CreateProductController)
-			// myLoader.getController();
-
-			// controller.setPrevStage(primaryStage);
-
 			Parent root = FXMLLoader.load(getClass().getResource("LoadingWindow.fxml"));
 			Scene myScene = new Scene(root);
 			primaryStage.setTitle("Loading");
@@ -74,4 +51,26 @@ public class Main extends Application {
 		System.exit(0);
 	}
 
+	// Parent root =
+	// FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
+	// root.getStylesheets().add("MainWindow.css");
+	/*
+	 * Parent root =
+	 * FXMLLoader.load(getClass().getResource("LoadingWindow.fxml"));
+	 * 
+	 * Scene scene = new Scene(root); primaryStage.setResizable(false);
+	 * 
+	 * primaryStage.setTitle("Selfienator"); primaryStage.setScene(scene);
+	 * primaryStage.show();
+	 */
+	/*
+	 * FXMLLoader myLoader = new
+	 * FXMLLoader(getClass().getResource("createProduct.fxml"));
+	 * 
+	 * Pane myPane = (Pane) myLoader.load();
+	 */
+	// CreateProductController controller = (CreateProductController)
+	// myLoader.getController();
+
+	// controller.setPrevStage(primaryStage);
 }
