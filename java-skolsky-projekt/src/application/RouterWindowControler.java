@@ -20,6 +20,8 @@ public class RouterWindowControler {
 	@FXML
 	private Button			sendFA00Button;
 	@FXML
+	private Button			sendGeneralButton;
+	@FXML
 	private CheckBox		ripVersion2CheckBox;
 	@FXML
 	private CheckBox		FA01NoShCheckBox;
@@ -102,7 +104,9 @@ public class RouterWindowControler {
 
 	@FXML
 	void sendHostName(ActionEvent event) {
-
+		String hostName = hostnameField.getText();
+		router.getGeneral().setHostName(hostName);
+		router.getGeneral().sendHostname(router);
 	}
 
 	@FXML
@@ -119,7 +123,7 @@ public class RouterWindowControler {
 		String password = consolePasswordField.getText();
 		router.getConsole().setPassword(password);
 
-		router.getConsole().send();
+		router.getConsole().send(router);
 	}
 
 	@FXML
@@ -131,7 +135,7 @@ public class RouterWindowControler {
 		String password = telnetPasswordField.getText();
 		router.getTelnet().setPassword(password);
 
-		router.getTelnet().send();
+		router.getTelnet().send(router);
 	}
 
 	@FXML
@@ -156,6 +160,11 @@ public class RouterWindowControler {
 
 	@FXML
 	void sendRIP(ActionEvent event) {
+
+	}
+
+	@FXML
+	void sendGeneral(ActionEvent event) {
 
 	}
 

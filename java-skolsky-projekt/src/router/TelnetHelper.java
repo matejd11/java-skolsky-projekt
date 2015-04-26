@@ -28,17 +28,18 @@ public class TelnetHelper {
 		this.password = password;
 	}
 
-	public void send() {
+	public void send(RouterHelper router) {
 		SerialPortHelper.sendln("");
 		SerialPortHelper.sendln("end");
 		SerialPortHelper.sendln("");
 		SerialPortHelper.sendln("exit");
 		SerialPortHelper.sendln("");
 
-		SerialPortHelper.sendln("enable");
-		SerialPortHelper.sendln("configure terminal");
+		router.login(2);
+
 		SerialPortHelper.sendln("line vty 0 15");
-		SerialPortHelper.sendln("password " + password);
+		SerialPortHelper.send("password ");
+		SerialPortHelper.sendln(password);
 		if (login) {
 			SerialPortHelper.sendln("login");
 		} else {

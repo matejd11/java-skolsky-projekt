@@ -28,17 +28,24 @@ public class ConsoleHelper {
 		this.password = password;
 	}
 
-	public void send() {
+	public boolean hasPassword() {
+		if (password.isEmpty())
+			return false;
+		return true;
+	}
+
+	public void send(RouterHelper router) {
 		SerialPortHelper.sendln("");
 		SerialPortHelper.sendln("end");
 		SerialPortHelper.sendln("");
 		SerialPortHelper.sendln("exit");
 		SerialPortHelper.sendln("");
 
-		SerialPortHelper.sendln("enable");
-		SerialPortHelper.sendln("configure terminal");
+		router.login(2);
+
 		SerialPortHelper.sendln("line console 0");
-		SerialPortHelper.sendln("password " + password);
+		SerialPortHelper.send("password ");
+		SerialPortHelper.sendln(password);
 		if (login) {
 			SerialPortHelper.sendln("login");
 		} else {
@@ -54,6 +61,10 @@ public class ConsoleHelper {
 		SerialPortHelper.sendln("");
 		SerialPortHelper.sendln("exit");
 		SerialPortHelper.sendln("");
+	}
+
+	public void login() {
+		SerialPortHelper.sendln(password);
 	}
 
 }
