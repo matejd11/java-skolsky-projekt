@@ -4,9 +4,9 @@ import Serial.SerialPortHelper;
 
 public class ConsoleHelper {
 
-	protected boolean	login;
-	protected boolean	logging_synchronous;
-	protected String	password;
+	protected boolean login;
+	protected boolean logging_synchronous;
+	protected String password;
 
 	public boolean isLogin() {
 		return login;
@@ -29,7 +29,7 @@ public class ConsoleHelper {
 	}
 
 	public boolean hasPassword() {
-		if (password.isEmpty())
+		if (password != null && password.isEmpty())
 			return false;
 		return true;
 	}
@@ -64,6 +64,7 @@ public class ConsoleHelper {
 	}
 
 	public void login() {
+	if	(password != null)	
 		SerialPortHelper.sendln(password);
 	}
 
