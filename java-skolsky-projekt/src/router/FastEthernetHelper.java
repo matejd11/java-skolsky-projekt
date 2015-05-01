@@ -63,7 +63,7 @@ public class FastEthernetHelper {
 
 		router.login(2);
 
-		SerialPortHelper.sendln("line console 0");
+		SerialPortHelper.sendln("interface " + name);
 		SerialPortHelper.sendln("ip add " + ipAddress + " " + maska());
 
 		if (no_shutdown) {

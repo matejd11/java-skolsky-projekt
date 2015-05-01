@@ -152,7 +152,14 @@ public class RouterWindowControler {
 
 	@FXML
 	void sendFA01(ActionEvent event) {
-
+		boolean shutdown = FA01NoShCheckBox.isSelected();
+		router.getFastEthernet01().setNo_shutdown(shutdown);
+		int mask_prefix = Integer.parseInt(FA01_MASK.getText());
+		router.getFastEthernet01().setMask_prefix(mask_prefix);
+		String ipAddress = FA01_IP_ADD.getText();
+		router.getFastEthernet01().setIpAddress(ipAddress);
+		
+		router.getFastEthernet01().send(router);
 	}
 
 	@FXML

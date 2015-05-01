@@ -1,8 +1,10 @@
 package router;
 
+import Serial.SerialPortHelper;
+
 
 public class SerialHelper {
-    protected String    ip_address;
+    protected String    ipAddress;
     protected int        mask_prefix;
     protected String    mask;
     protected boolean    no_shutdown;
@@ -61,5 +63,68 @@ public class SerialHelper {
 		this.name = name;
 	}
 
+	public void send(RouterHelper router) {
+		SerialPortHelper.sendln("");
+		SerialPortHelper.sendln("end");
+		SerialPortHelper.sendln("");
+		SerialPortHelper.sendln("exit");
+		SerialPortHelper.sendln("");
 
+		router.login(2);
+
+		SerialPortHelper.sendln("interface " + name);
+		SerialPortHelper.sendln("ip add " + ipAddress + " " + maska());
+
+		if (no_shutdown) {
+			SerialPortHelper.sendln("no shutdown");
+		} else {
+			SerialPortHelper.sendln("shutdown");
+		}
+		SerialPortHelper.sendln("");
+		SerialPortHelper.sendln("end");
+		SerialPortHelper.sendln("");
+		SerialPortHelper.sendln("exit");
+		SerialPortHelper.sendln("");
+	}
+
+	private String maska() {
+		if (mask != null && !mask.isEmpty())
+			return mask;
+
+		String[] res = new String[4];
+
+		res[0] = "0";
+		res[1] = "0";
+		res[2] = "0";
+		res[3] = "0";
+
+		if (mask_prefix>24){
+		    res[0] = "255";
+		    res[1] = "255";
+		    res[2] = "255";
+		    res[3] = Integer.toString((int)Math.pow(2, mask_prefix-32) -1);
+		}
+		else if (mask_prefix>16){
+		    res[0] = "255";
+		    res[1] = "255";
+		    res[2] = Integer.toString((int)Math.pow(2, mask_prefix-16) -1);
+		    res[3] = "0";
+		}
+		else if (mask_prefix>8){
+		    res[0] = "255";
+		    res[1] = Integer.toString((int)Math.pow(2, mask_prefix-8) -1);
+		    res[2] = "0";
+		    res[3] = "0";
+		}
+		else {
+
+		    res[0] = Integer.toString((int)Math.pow(2, mask_prefix) -1);
+		    res[1] = "0";
+		    res[2] = "0";
+		    res[3] = "0";
+		}
+		return res[0] + "." + res[1] + "." + res[2] + "." + res[3];
+
+
+	}
 }
